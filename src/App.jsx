@@ -28,7 +28,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ImageGallery from "./components/ImageGallery";
-const galleryImages = import.meta.glob("/gallery/*.{jpg,jpeg,png}");
+const galleryImages = import.meta.glob("/*.{jpg,jpeg,png}");
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
