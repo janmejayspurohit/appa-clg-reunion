@@ -28,7 +28,8 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ImageGallery from "./components/ImageGallery";
-const galleryImages = import.meta.glob("/public/*.{jpg,jpeg,png}");
+const galleryImages = import.meta.glob("/public/gallery/*.{jpg,jpeg,png}");
+console.log("🚀 -> file: App.jsx:32 -> galleryImages:", galleryImages);
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -51,8 +52,8 @@ function App() {
   const images = Object.keys(galleryImages).map((path) => {
     return {
       id: path,
-      url: path,
-      thumbnailUrl: path,
+      url: path.replace("/public", ""),
+      thumbnailUrl: path.replace("/public", ""),
       title: path,
     };
   });
