@@ -50,8 +50,8 @@ function App() {
 
   const images = Object.keys(galleryImages).map((path) => ({
     id: path,
-    url: path.replace("./", "/src/"),
-    thumbnailUrl: path.replace("./", "/src/"),
+    url: path.replace("./", "/public/"),
+    thumbnailUrl: path.replace("./", "/public/"),
     title: path,
   }));
 
