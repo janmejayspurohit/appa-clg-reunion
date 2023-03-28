@@ -13,7 +13,7 @@ const ImageGallery = ({ images }) => {
   return (
     <Box m="2">
       <Grid
-        templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }}
+        templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(6, 1fr)" }}
         gap={4}
         justifyContent="center"
         alignItems="center"

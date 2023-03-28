@@ -86,7 +86,7 @@ function App() {
       <Stack bg="gray.100" maxW="100vw" minH="100vh">
         {/* Header */}
         <Flex justifyContent="space-between" alignItems="center" bg="#03045E" color="white" p={4}>
-          <Heading as="h1" size="md" ml={4}>
+          <Heading as="h1" size={["sm", "md"]} ml={4}>
             College Reunion - JSS 1983 - B.Com
           </Heading>
           <Box display={{ base: "block", md: "none" }}>
@@ -118,11 +118,11 @@ function App() {
               <Heading as="h1" size="xl">
                 College Batch 1983 Reunion
               </Heading>
-              <Text mt={4}>
+              <Text p={4} textAlign="justify">
                 Join us for a night of reminiscing and catching up with old friends from the Class of 1983. Our special guest of honor will be [Guest
                 of Honor Name].
               </Text>
-              <Image maxW="40vw" src="/invitation.jpeg" alt="Invitation" />
+              <Image maxH={["60vh", "100vh"]} src="/invitation.jpeg" alt="Invitation" />
             </>
           )}
 
@@ -132,7 +132,7 @@ function App() {
                 <Accordion allowMultiple>
                   {CLASSMATES.map((classmate) => (
                     <AccordionItem>
-                      <AccordionButton w="50vw">
+                      <AccordionButton w="80vw">
                         <Box flex="1" textAlign="left">
                           {classmate}
                         </Box>
@@ -153,7 +153,7 @@ function App() {
                 <Accordion allowMultiple>
                   {["memory 1", "memory 2"].map((classmate) => (
                     <AccordionItem>
-                      <AccordionButton w="50vw">
+                      <AccordionButton w="80vw">
                         <Box flex="1" textAlign="left">
                           {classmate}
                         </Box>
@@ -175,7 +175,7 @@ function App() {
 
         {/* Footer */}
         <HStack justifyContent="center" p={2}>
-          <Text>© Made with 💝 by Satish S Purohit - JSS 1983 - B.Com</Text>
+          <Text fontSize={["8px", "10px", "12px"]}>© Made with 💝 by Satish S Purohit - JSS 1983 - B.Com</Text>
         </HStack>
       </Stack>
     </ChakraProvider>
