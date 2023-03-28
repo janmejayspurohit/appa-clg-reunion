@@ -28,7 +28,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ImageGallery from "./components/ImageGallery";
-const galleryImages = import.meta.glob("/public/assets/gallery/*.{jpg,jpeg,png}");
+const galleryImages = import.meta.glob("/gallery/*.{jpg,jpeg,png}");
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -110,7 +110,7 @@ function App() {
           {selectedView == "home" && (
             <>
               <Flex justifyContent="center">
-                <Image w="90%" src="/public/assets/banner.jpeg" alt="Banner" />
+                <Image w="90%" src="/banner.jpeg" alt="Banner" />
               </Flex>
               <Heading as="h1" size="xl">
                 College Batch 1983 Reunion
@@ -119,7 +119,7 @@ function App() {
                 Join us for a night of reminiscing and catching up with old friends from the Class of 1983. Our special guest of honor will be [Guest
                 of Honor Name].
               </Text>
-              <Image maxW="40vw" src="/public/assets/invitation.jpeg" alt="Invitation" />
+              <Image maxW="40vw" src="/invitation.jpeg" alt="Invitation" />
             </>
           )}
 
