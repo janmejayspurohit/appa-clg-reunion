@@ -48,12 +48,14 @@ function App() {
     "Vajindra Dessi",
   ];
 
-  const images = Object.keys(galleryImages).map((path) => ({
-    id: path,
-    url: path.replace("./", "/public/"),
-    thumbnailUrl: path.replace("./", "/public/"),
-    title: path,
-  }));
+  const images = Object.keys(galleryImages).map((path) => {
+    return {
+      id: path,
+      url: path,
+      thumbnailUrl: path,
+      title: path,
+    };
+  });
 
   const NavLinks = ({ onClose }) => {
     const handleViewChange = (view) => {
