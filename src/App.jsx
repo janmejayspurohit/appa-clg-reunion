@@ -29,24 +29,69 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ImageGallery from "./components/ImageGallery";
 const galleryImages = import.meta.glob("/public/gallery/*.{jpg,jpeg,png}");
-console.log("🚀 -> file: App.jsx:32 -> galleryImages:", galleryImages);
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedView, setSelectedView] = useState("home");
   const CLASSMATES = [
-    "Ashok Malebennur",
-    "Anil Hassan",
-    "Bandu Koti",
-    "Diwakar Hegde",
-    "P N",
-    "Ravi Katti",
-    "Ravindra Desai",
-    "Ramanath Banshankari",
-    "Srinath Hegde",
-    "Srinath Kulkarni",
-    "Satish Purohit",
-    "Vajindra Dessi",
+    "MR D M ANNIGERI",
+    "MS VARADA A ALUR",
+    "MS REKHA V BANKAPUR",
+    "MR R B BANASHANKARI",
+    "MR G M BANJAR",
+    "MS NEETA V BHUJANG",
+    "MR K RAGHAVENDRA BHAT",
+    "MR S S BHAT",
+    "MR ANAND N DESAI",
+    "MR VAJENDRA R DESAI",
+    "MR RAVINDRA D DESAI",
+    "MS RAMA A GALGALI",
+    "MR M H GOTUR",
+    "MR A K HASSAN",
+    "MR V B HUDDAR",
+    "MR S G HEGDE",
+    "MS VIDYAVATI S HEGDE",
+    "MR S B HADIMANI",
+    "MS GAYATRI Y HIREHOLI",
+    "MR GAJANAN N HEGDE",
+    "MR V S HIREMATH",
+    "MR S G HEGDE",
+    "MR S R HEGDE",
+    "MR DIWAKAR N HEGDE",
+    "MR M B HEBBALLI",
+    "MS NARMADA G HEGDE",
+    "MS L S KUBAL",
+    "MR S B KOPPAD",
+    "MS SAVITRI R KARANT",
+    "MR R A KATTI",
+    "MR S P KULKARNI",
+    "MR M N KULKARNI",
+    "MR RANAMAND N KULKARNI",
+    "MR B N KOTI",
+    "MR K G MANE",
+    "MR S N MASUR",
+    "MS NAGARATHNA L MUDRABETT",
+    "MS SUNAND V MATHAD",
+    "MR ASHOK N MALEBENNUR",
+    "MS VIJAYALAKSHMI V NANDODKAR",
+    "MR SATISH S PUROHIT",
+    "MS USHAKIRAN R PATHAWARI",
+    "MS VIDYA P PAI",
+    "MR S B PATIL",
+    "MS LEELA G PATIL",
+    "MS RAJANI K PATIL",
+    "MR B A PATIL",
+    "MS SHOBHA V RAO",
+    "MS RATHNA L UPADHYA",
+    "MR S M SOOGURSHETTAR",
+    "MR P N SHEDBAL",
+    "MS SEEMA S SHANBHAG",
+    "MS MANGAL V SHIMPI",
+    "MS REKHA D SABLE",
+    "MS B SUMITRA",
+    "MR P B UPADHYA",
+    "MS V HEMALATHA",
+    "MR DAYANAND D PATIL",
   ];
 
   const images = Object.keys(galleryImages).map((path) => {
@@ -58,7 +103,7 @@ function App() {
     };
   });
 
-  const NavLinks = ({ onClose }) => {
+  const NavLinks = () => {
     const handleViewChange = (view) => {
       setSelectedView(view);
       onClose();
@@ -87,7 +132,7 @@ function App() {
         {/* Header */}
         <Flex justifyContent="space-between" alignItems="center" bg="#03045E" color="white" p={4}>
           <Heading as="h1" size={["sm", "md"]} ml={4}>
-            College Reunion - JSS 1983 - B.Com
+            ಗುರುವಂದನಾ - JSS 1983 - B.Com
           </Heading>
           <Box display={{ base: "block", md: "none" }}>
             <IconButton aria-label="Navigation Menu" color="#03045E" icon={<HamburgerIcon />} onClick={onOpen} />
@@ -115,13 +160,9 @@ function App() {
               <Flex justifyContent="center">
                 <Image w="90%" src="/banner.jpeg" alt="Banner" />
               </Flex>
-              <Heading as="h1" size="xl">
-                College Batch 1983 Reunion
+              <Heading as="h1" size={["md", "xl"]} textAlign="justify">
+                1983 Batch Guruvandana Event
               </Heading>
-              <Text p={4} textAlign="justify">
-                Join us for a night of reminiscing and catching up with old friends from the Class of 1983. Our special guest of honor will be [Guest
-                of Honor Name].
-              </Text>
               <Image maxH={["60vh", "100vh"]} src="/invitation.jpeg" alt="Invitation" />
             </>
           )}
@@ -130,11 +171,11 @@ function App() {
             <>
               <Stack mt={4} spacing={4}>
                 <Accordion allowMultiple>
-                  {CLASSMATES.map((classmate) => (
-                    <AccordionItem>
+                  {CLASSMATES.map((classmate, i) => (
+                    <AccordionItem key={"classmates" + i}>
                       <AccordionButton w="80vw">
                         <Box flex="1" textAlign="left">
-                          {classmate}
+                          {i + 1}. {classmate}
                         </Box>
                         <AccordionIcon />
                       </AccordionButton>
@@ -175,7 +216,7 @@ function App() {
 
         {/* Footer */}
         <HStack justifyContent="center" p={2}>
-          <Text fontSize={["8px", "10px", "12px"]}>© Made with 💝 by Satish S Purohit - JSS 1983 - B.Com</Text>
+          <Text fontSize={["10px", "12px", "14px"]}>© Made with 💝 by Satish S Purohit</Text>
         </HStack>
       </Stack>
     </ChakraProvider>
