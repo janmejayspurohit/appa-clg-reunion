@@ -94,6 +94,8 @@ function App() {
     "MR DAYANAND D PATIL",
   ];
 
+  const PROFESSORS = ["Professor 1", "Professor 2", "Professor 3"];
+
   const images = Object.keys(galleryImages).map((path) => {
     return {
       id: path,
@@ -115,6 +117,9 @@ function App() {
         </Button>
         <Button colorScheme="white" onClick={() => handleViewChange("classmates")}>
           Classmates
+        </Button>
+        <Button colorScheme="white" onClick={() => handleViewChange("professors")}>
+          Professors
         </Button>
         <Button colorScheme="white" onClick={() => handleViewChange("memories")}>
           Memories
@@ -188,15 +193,36 @@ function App() {
               </Stack>
             </>
           )}
+          {selectedView == "professors" && (
+            <>
+              <Stack mt={4} spacing={4}>
+                <Accordion allowMultiple>
+                  {PROFESSORS.map((professor, i) => (
+                    <AccordionItem key={"professors" + i}>
+                      <AccordionButton w="80vw">
+                        <Box flex="1" textAlign="left">
+                          {i + 1}. {professor}
+                        </Box>
+                        <AccordionIcon />
+                      </AccordionButton>
+                      <AccordionPanel pb={4}>
+                        <Text>Tell us about yourself</Text>
+                      </AccordionPanel>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </Stack>
+            </>
+          )}
           {selectedView == "memories" && (
             <>
               <Stack mt={4} spacing={4}>
                 <Accordion allowMultiple>
-                  {["memory 1", "memory 2"].map((classmate) => (
+                  {["memory 1", "memory 2"].map((memory) => (
                     <AccordionItem>
                       <AccordionButton w="80vw">
                         <Box flex="1" textAlign="left">
-                          {classmate}
+                          {memory}
                         </Box>
                         <AccordionIcon />
                       </AccordionButton>
